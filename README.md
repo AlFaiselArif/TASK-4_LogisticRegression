@@ -3,10 +3,9 @@
 # Objective
 To build a binary classification model using Logistic Regression to accurately detect breast cancer as malignant (M) or benign (B) using the **Breast Cancer Wisconsin (Diagnostic) Dataset**.
 
----
-
 # Dataset
-**Source:**-"C:\Users\alfai\Downloads\data.csv"
+**Source:**-"C:/Users/alfai/Downloads/data.csv"
+**A Cleaned Dataset**-"C:/Users/alfai/Downloads/cleaned_data.csv"
 
 - Total Records: 569
 - Features: 30 numeric features related to cell nuclei characteristics
@@ -68,3 +67,11 @@ To build a binary classification model using Logistic Regression to accurately d
 - Threshold tuning
 - Evaluation metrics: Precision, Recall, AUC
 - Understanding sigmoid activation
+  
+# Code for a clean and searchable dataset
+
+import pandas as pd
+df = pd.read_csv('C:/Users/alfai/Downloads/data.csv')
+# Drop empty or unwanted column
+df.drop(columns=['Unnamed: 32'], inplace=True, errors='ignore')
+df.to_csv('cleaned_data.csv', index=False)
